@@ -1,0 +1,19 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="container">
+	<h1 style="margin: 25px 25px; text-align: center">
+		Post a Comment
+	</h1>
+	<div style="width: 50%; margin: 25px auto; padding: 50px 50px; background-image: url(https://images.unsplash.com/photo-1578727499209-23b250d81604?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+		<form action="/blogs/<%= blog_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+		  <div class="form-group">
+			<label for="text">Comment:</label>
+			<input type="text" class="form-control" id="text" value="<%= comment.text %>" name="comment[text]">
+		  </div>
+		  <button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+	
+</div>
+
+<%- include("../partials/footer.ejs") %>
